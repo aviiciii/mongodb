@@ -7,3 +7,5 @@ client = MongoClient(MONGO_DB_URI)
 
 for db in client.list_databases():
     print(db)
+
+client.close()
