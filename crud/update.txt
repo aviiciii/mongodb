@@ -1,0 +1,17 @@
+
+db.birds.findOne({common_name:"Canada Goose"})
+#output
+_id: ObjectId("6268413c613e55b82d7065d2")
+
+# add new subdocument
+db.birds.updateOne(
+    {
+        _id: ObjectId("6268413c613e55b82d7065d2")
+    },
+    {
+    $set: {
+        tags: ["geese", "herbivore", "migration"],
+        },
+    }
+)
+
