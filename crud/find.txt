@@ -24,3 +24,15 @@ db.transactions.find({
       $elemMatch: { amount: { $lte: 4500 }, transaction_code: "sell" },
     },
   })
+
+# using logical
+
+db.sales.find({ couponUsed: true,  purchaseMethod: "Online", "customer.age": { $lte: 25 } })
+
+Return every document in the sales collection that meets one of the following criteria:
+
+Item with the name of pens
+
+Item with a writing tag
+
+db.sales.find({$or:[ {"items.name": "pens"}, {"items.tags": "writing"} ]})
