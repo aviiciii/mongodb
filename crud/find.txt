@@ -1,0 +1,6 @@
+# find using id
+db.collection.find({ _id: ObjectId("5bd761dcae323e45a93ccff4")})
+
+# find for multiple values
+db.sales.find({ storeLocation: { $in: ["London", "New York"] } })
+
