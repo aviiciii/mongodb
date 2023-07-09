@@ -9,8 +9,23 @@ db.birds.updateOne(
         _id: ObjectId("6268413c613e55b82d7065d2")
     },
     {
-    $set: {
-        tags: ["geese", "herbivore", "migration"],
+        $set: {
+            tags: ["geese", "herbivore", "migration"],
+        },
+    }
+)
+
+# add element to existing array by adding new+existing
+
+db.birds.updateOne(
+    {
+        _id: ObjectId("6268471e613e55b82d7065d7")
+    },
+    {
+        $push: {
+            diet: {
+                $each: ["newts", "opossum", "skunks", "squirrels"]
+            },
         },
     }
 )
