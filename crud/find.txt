@@ -4,3 +4,13 @@ db.collection.find({ _id: ObjectId("5bd761dcae323e45a93ccff4")})
 # find for multiple values
 db.sales.find({ storeLocation: { $in: ["London", "New York"] } })
 
+# using comparison
+
+# less than
+db.sales.find({items.price : {$ls: 50}})
+# less than or equal to 
+db.sales.find({items.price : {$ls: 50}})
+# greater than
+db.sales.find({items.price : {$ls: 50}})
+# greater than or equal to
+db.sales.find({items.price : {$ls: 50}})
