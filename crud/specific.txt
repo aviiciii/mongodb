@@ -1,0 +1,32 @@
+db.sales.find(
+    {
+        storeLocation: 'Denver'
+    },
+    {
+        saleDate:1,
+        storeLocation:1
+    }
+)
+
+db.sales.find(
+    {
+        "customer.age": {$lt: 30},
+        "customer.satisfaction": {$gt: 3},
+    },
+    {
+        "customer.age": 1,
+        "customer.satisfaction": 1,
+        _id: 0
+    }
+)
+
+db.sales.find(
+    {
+        storeLocation: {$in: ["Seattle", "New York"]},
+    },
+    {
+        purchaseMethod: 0,
+        customer: 0,
+        couponUsed: 0
+    }
+)
