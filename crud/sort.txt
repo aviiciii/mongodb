@@ -1,1 +1,5 @@
 db.sales.find().sort({saleDate:1})
+
+# desc
+
+db.sales.find({ purchaseMethod: "Online", couponUsed: true}).sort({ saleDate: -1 })
