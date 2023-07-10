@@ -1,0 +1,1 @@
+db.sales.find().sort({saleDate:1})
