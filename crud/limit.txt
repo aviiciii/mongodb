@@ -1,0 +1,9 @@
+db.sales.find({
+    "items.name": 
+        { 
+            $in: ["laptop", "backpack", "printer paper"] 
+        }, 
+        "storeLocation": "London", 
+}).sort(
+    { saleDate: -1, }
+).limit(3)
