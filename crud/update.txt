@@ -30,3 +30,25 @@ db.birds.updateOne(
     }
 )
 
+
+db.birds.findOne({common_name:"Robin Redbreast"})
+#output
+_id: null
+
+# increment sighting of bird and date last sighted
+db.birds.updateOne(
+  {
+    common_name: "Robin Redbreast",
+  },
+  {
+    $inc: {
+      "sightings": 1,
+    },
+    $set: {
+      last_updated: new Date(),
+    },
+  },
+  {
+    upsert: true,
+  }
+)
